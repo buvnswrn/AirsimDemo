@@ -1,4 +1,4 @@
-![Warehouse Scene](Documentation/img/WarehouseWithAirsim.png)
+![Warehouse Scene](Documentation/img/WarehouseWithAirsim.PNG)
 
 # Robotics Warehouse with Microsoft AirSim Plugin
 
