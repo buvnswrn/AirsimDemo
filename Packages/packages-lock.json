@@ -20,7 +20,7 @@
     },
     "com.unity.collections": {
       "version": "1.2.4",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.6.6",
@@ -69,7 +69,7 @@
     },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -141,6 +141,13 @@
       },
       "hash": "4a2a506dd48c62bbd1ee5de4eb15ddd679a38e6f"
     },
+    "com.unity.scripting.python": {
+      "version": "4.0.0-exp.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.searcher": {
       "version": "4.9.1",
       "depth": 2,
@@ -179,7 +186,7 @@
     },
     "com.unity.simulation.client": {
       "version": "0.0.10-preview.10",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
