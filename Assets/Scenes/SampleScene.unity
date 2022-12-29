@@ -9656,6 +9656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 214774686}
+  - component: {fileID: 214774687}
   m_Layer: 0
   m_Name: GeneratedWarehouse
   m_TagString: Untagged
@@ -9681,6 +9682,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &214774687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214774685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c8a9c26e4aa0243a975df67a09089c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectOfInterest: box001(Clone)
 --- !u!1 &216734493
 GameObject:
   m_ObjectHideFlags: 0
