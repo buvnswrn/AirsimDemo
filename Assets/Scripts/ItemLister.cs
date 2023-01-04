@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemLister : MonoBehaviour
@@ -9,23 +10,35 @@ public class ItemLister : MonoBehaviour
     public string objectOfInterest;
 
     private List<GameObject> boxes;
+    private List<String> locations;
+    private List<String> tasks;
     private Dictionary<int, Dictionary<int, double>> distanceHeuristics = new Dictionary<int, Dictionary<int, double>>();
     void Start()
     {
          boxes = new List<GameObject>();
+         locations = new List<String>();
+         tasks = new List<String>();
         var allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
      foreach (var obj in allObjects)
      {
          if (obj.name == objectOfInterest)
          {
              boxes.Add((GameObject)obj);
+             String shelf_id = "shelf_"+((GameObject)obj).transform.parent.transform.parent.transform.parent.gameObject
+                 .GetInstanceID().ToString();
+             locations.Add(shelf_id);
+             // TASK(obj, capture, shelf_id);
+             String taskString = "TASK( "+"box_"+obj.GetInstanceID()+","+"capture,"+shelf_id+");";
+             tasks.Add(taskString);
          }
      }
 
-     // foreach (var box in boxes)
-     // {
-     //     Debug.Log(box.transform.position);
-     // }
+     locations = locations.Distinct().ToList();
+     tasks = tasks.Distinct().ToList();
+     foreach (var box in tasks)
+     {
+         Debug.Log(box);
+     }
      CalculateHeuristics();
     }
 
