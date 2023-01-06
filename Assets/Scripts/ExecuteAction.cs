@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExecuteAction
 {
+  private AirsimExecutor _airsim = new AirsimExecutor();
   private string extractActionParameters(string actionInstruction)
   {
     return actionInstruction.Split(",")[1].Substring(0,actionInstruction.Length-2);
@@ -34,7 +35,7 @@ public class ExecuteAction
       }
       else if (parameter.Equals("take_off"))
       {
-        // TODO: take_off
+        _airsim.takeOff();
         return true;
       }
     }
