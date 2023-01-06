@@ -7,6 +7,7 @@ public class testPython : MonoBehaviour
     // Start is called before the first frame update
     bool takeOffFired = false;
     bool landingFired = false;
+    private bool captureFired = false;
     void Start()
     {
         
@@ -18,15 +19,30 @@ public class testPython : MonoBehaviour
         if (!takeOffFired && Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log("Taking off...");
-            PythonRunner.RunFile("D:\\Bhuvan\\Projects\\temp\\pythonScripts\\takeoff.py");
+            PythonRunner.RunFile("Assets/Scripts/python/takeoff.py");
+            resetFireVariables();
             takeOffFired = true;
-            landingFired = false;
         }
         else if (!landingFired && Input.GetKeyDown(KeyCode.L))
         {
             Debug.Log("Landing...");
+            PythonRunner.RunFile("Assets/Scripts/python/land.py");
+            resetFireVariables();
             landingFired = true;
-            takeOffFired = false;
         }
+        else if (!captureFired && Input.GetKeyDown(KeyCode.C))
+        {
+            resetFireVariables();
+            captureFired = true;
+            Debug.Log(("Capturing Image..."));
+            PythonRunner.RunFile("Assets/Scripts/python/takeoff.py");
+        }
+    }
+
+    private void resetFireVariables()
+    {
+        landingFired = false;
+        takeOffFired = false;
+        captureFired = false;
     }
 }
