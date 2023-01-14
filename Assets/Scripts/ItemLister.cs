@@ -78,13 +78,13 @@ namespace RoboticWarehouse
         private void WriteToFiles()
         {
             string move_cost_string = String.Join("; \n", move_cost);
-            File.WriteAllLines("move_cost.txt", move_cost);
+            File.WriteAllLines("Temp/move_cost.txt", move_cost);
             string non_fluents_tasks_string = String.Join("; \n", non_fluents_tasks);
-            File.WriteAllLines("non_fluents_tasks.txt", non_fluents_tasks);
+            File.WriteAllLines("Temp/non_fluents_tasks.txt", non_fluents_tasks);
             string locations_string = String.Join("; \n", locations);
-            File.WriteAllLines("locations.txt", locations);
+            File.WriteAllLines("Temp/locations.txt", locations);
             string tasks_string = String.Join("; \n", tasks);
-            File.WriteAllLines("tasks.txt", tasks);
+            File.WriteAllLines("Temp/tasks.txt", tasks);
 
         }
 
