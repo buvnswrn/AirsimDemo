@@ -9721,8 +9721,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be0e0b5408c8364980f164cc45eef15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Repository: http://localhost:8090/rdf4j/repositories/dummy_knowledge
-  objectsOfInterest: box001(Clone)
 --- !u!1 &216734493
 GameObject:
   m_ObjectHideFlags: 0
@@ -25404,7 +25402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e435b4e3c2887fa4690e56629bd2a156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  servicePrefix: http://localhost:8098/actions/
 --- !u!114 &531422892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44623,7 +44620,7 @@ PrefabInstance:
     - target: {fileID: 114101639218931136, guid: f63bf11bc2a9a7146a4375d511e1425c,
         type: 3}
       propertyPath: vehicleName
-      value: SimpleFlight
+      value: PX4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f63bf11bc2a9a7146a4375d511e1425c, type: 3}
@@ -65413,8 +65410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c9a65493a6c7a4f98697ed7b1c0fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectOfInterest: box001(Clone)
-  servicePrefix: http://localhost:8099/
 --- !u!114 &1413994727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65427,7 +65422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d26047c22d25549a1b2a4223981eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  servicePrefix: http://localhost:8099/
 --- !u!4 &1413994728
 Transform:
   m_ObjectHideFlags: 0
@@ -77548,8 +77542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef15b834376d0d47a001244d8f2c796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  template: 
-  avatarGameObject: {fileID: 1654489433}
 --- !u!195 &1654489437
 NavMeshAgent:
   m_ObjectHideFlags: 0
