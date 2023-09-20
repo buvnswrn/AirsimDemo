@@ -8,14 +8,11 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Security.Policy;
 using Newtonsoft.Json;
-using NLog;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
-using Logger = NLog.Logger;
 
 public class HTTPService
 {
-    protected static Logger Log;
     private Uri ListenUri;
     private HttpListener listener;
 
@@ -24,7 +21,6 @@ public class HTTPService
     private static HTTPService _httpService;
     private HTTPService(Uri listnerPrefix)
     {
-        Log = LogManager.GetCurrentClassLogger();
         ListenUri = listnerPrefix;
         Listen();
     }
@@ -47,7 +43,7 @@ public class HTTPService
         }
         catch (HttpListenerException ex)
         {
-            Log.Warn("Could not start HTTPListener: " + ex.Message);
+            Debug.LogWarning("Could not start HTTPListener: " + ex.Message);
         }
     }
 
@@ -63,7 +59,7 @@ public class HTTPService
                 }
                 catch (HttpListenerException e)
                 {
-                    Log.Warn("NavMeshPath Service: HTTP Listener error: " + e.Message);
+                    Debug.LogWarning("NavMeshPath Service: HTTP Listener error: " + e.Message);
                 }
             }
 
@@ -94,7 +90,7 @@ public class HTTPService
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Internal error:" + ex.Message);
+            Debug.LogError("Internal error:" + ex.Message);
             context.Response.Close();
             return;
         }
@@ -139,7 +135,7 @@ public class HTTPService
 
     public void Stop()
     {
-        Log.Info("Stopping HTTPService");
+        Debug.Log("Stopping HTTPService");
         if (isListening)
         {
             isListening = false;
