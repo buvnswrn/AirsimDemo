@@ -22,7 +22,8 @@ To use the warehouse in your own project, please visit the [Usage](Documentation
 - [Robotics Navigation 2 SLAM Example](https://github.com/Unity-Technologies/Robotics-Nav2-SLAM-Example)
 - [Unity Robotics Warehouse](https://github.com/Unity-Technologies/Robotics-Warehouse)
 - [Computer Vision Perception Package](https://github.com/Unity-Technologies/com.unity.perception/)
-
+- [AJAN SiMRK Unity Plugin](https://github.com/buvnswrn/AJAN-SiMRK-Unity)
+- [AJAN Service](https://github.com/aantakli/AJAN-service)
 
 ## More from Unity Robotics
 Visit the [Robotics Hub](https://github.com/Unity-Technologies/Unity-Robotics-Hub) for more tutorials, tools, and information on robotics simulation in Unity!
