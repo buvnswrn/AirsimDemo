@@ -1,0 +1,2 @@
+## Config files to update for Airsim
+The files found in `config` folder contains settings.json for Airsim-AJAN Communication through REST - [settings_Airsim_Ajan.json](settings_Airsim_Ajan.json) and also PX4, QGroundcontrol - [settings_px4.json](settings_px4.json).  Simply rename this file to `settings.json` and replace it in Airsim Documents folder i.e. `Documents\Airsim\settings.json`. Failure to do so may result in Airsim crashing the unity scene.
