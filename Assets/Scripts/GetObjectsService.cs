@@ -8,7 +8,6 @@ using System.Runtime.Serialization;
 using System.Security.Policy;
 using Newtonsoft.Json;
 using UnityEngine;
-using Logger = NLog.Logger;
 using Newtonsoft.Json.Linq;
 using UnityEngine.AI;
 
