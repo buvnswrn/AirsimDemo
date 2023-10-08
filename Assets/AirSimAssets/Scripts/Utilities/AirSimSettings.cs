@@ -304,8 +304,8 @@ namespace AirSimUnity {
         private CameraCaptureSettings GetDefaultCaptureSettings() {
             CameraCaptureSettings capSettings;
             capSettings.ImageType = 0;
-            capSettings.Width = 256;
-            capSettings.Height = 144;
+            capSettings.Width = 640;
+            capSettings.Height = 480;
             capSettings.FOV_Degrees = 90;
             capSettings.AutoExposureSpeed = 100;
             capSettings.AutoExposureBias = 0;
