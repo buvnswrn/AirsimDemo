@@ -5,16 +5,20 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SimModeSelector.unity
     guid: 2a2adab4f94d2a8428812b3c4db5f357
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CarDemo.unity
     guid: 48447221fb4a8864dbedfeed703bf275
   - enabled: 0
     path: Assets/Scenes/DroneDemo.unity
     guid: 012f6bdfaada17042bf7917f7d4fcbd8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Warehouse.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 5b4d91bc064fdf048bf9e9ad593a4284,
+      type: 2}
+    com.unity.renderstreaming.settings: {fileID: 11400000, guid: 77c9ac4bbc18d4a459f786e8f5d33346,
+      type: 2}
