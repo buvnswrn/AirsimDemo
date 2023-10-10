@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /**
  * This script assumes that <see>
@@ -10,24 +9,24 @@ using UnityEngine;
  */
 public class SyncObject : MonoBehaviour
 {
-    private readonly RDF _rdf = RDF.Instance();
+    private readonly Rdf _rdf = Rdf.Instance();
     public string type;
-    public string Repository = "http://localhost:8090/rdf4j/repositories/dummy_knowledge";
+    [FormerlySerializedAs("Repository")] public string repository = "http://localhost:8090/rdf4j/repositories/dummy_knowledge";
     public string server = "http://localhost:7200";
     public string repo = "dummy_knowledge";
-    private Vector3 lastPosition;
+    private Vector3 _lastPosition;
     // Start is called before the first frame update
     void Start()
     {
-        lastPosition = transform.position;
+        _lastPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position != lastPosition)
+        if (transform.position != _lastPosition)
         {
-            _rdf.UpdateRDFRepresentation(gameObject, type);
+            _rdf.UpdateRdfRepresentation(gameObject, type);
         }
     }
 }
