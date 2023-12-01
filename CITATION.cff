@@ -1,0 +1,25 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Unity Airsim Warehouse
+message: Unity Robotics Warehouse Scene integrated with Microsoft Airsim
+type: software
+authors:
+  - given-names: Bhuvaneshwaran
+    family-names: Ilanthirayan
+    email: buvnswrn@gmail.com
+identifiers:
+  - type: url
+    value: 'https://github.com/buvnswrn/AirsimDemo'
+    description: 'Github Link for Unity-Warehouse-Airsim'
+repository-code: 'https://github.com/buvnswrn/AirsimDemo'
+abstract: >-
+  Microsoft Airsim Framework integrated in
+  Unity Warehouse Scene
+keywords:
+  - ajan
+  - unity
+  - airsim
+  - rest-api
+license: GPL-3.0+
