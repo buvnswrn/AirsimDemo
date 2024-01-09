@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>dotNetRdf.Shacl</id>
+    <version>3.1.0</version>
+    <title>dotNetRdf SHACL Support</title>
+    <authors>RobVesse,tpluscode,kal_ahmed,ronmichael,dotnetrdf</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>http://www.dotnetrdf.org/</projectUrl>
+    <description>Provides support for validating RDF graphs with the W3C Shape Constraint Language.</description>
+    <copyright>Copyright © dotNetRDF Project 2009-2023</copyright>
+    <tags>RDF Validation Shapes Constraint SHACL</tags>
+    <repository type="git" url="https://github.com/dotnetrdf/dotnetrdf" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="dotNetRdf.Core" version="3.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

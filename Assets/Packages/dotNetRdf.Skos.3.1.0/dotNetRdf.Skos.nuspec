@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>dotNetRdf.Skos</id>
+    <version>3.1.0</version>
+    <authors>RobVesse,tpluscode,kal_ahmed,ronmichael,dotnetrdf</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>http://www.dotnetrdf.org/</projectUrl>
+    <description>Provides a convience API for working the RDF graphs that contain SKOS Concept Schemes.</description>
+    <copyright>Copyright © dotNetRDF Project 2009-2023</copyright>
+    <tags>RDF SKOS Taxonomy</tags>
+    <repository type="git" url="https://github.com/dotnetrdf/dotnetrdf" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="dotNetRdf.Core" version="3.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

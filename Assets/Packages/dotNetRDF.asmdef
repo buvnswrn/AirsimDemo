@@ -1,0 +1,32 @@
+{
+    "name": "dotNetRDF1",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "dotNetRdf.Client.dll",
+        "dotNetRdf.dll",
+        "dotNetRdf.Data.DataTables.dll",
+        "dotNetRdf.Dynamic.dll",
+        "dotNetRdf.Inferencing.dll",
+        "dotNetRdf.Ontology.dll",
+        "dotNetRdf.Query.FullText.dll",
+        "dotNetRdf.Query.Spin.dll",
+        "dotNetRdf.Shacl.dll",
+        "dotNetRdf.Skos.dll",
+        "dotNetRdf.Writing.HtmlSchema.dll",
+        "VDS.Common.dll",
+        "J2N.dll",
+        "Json.Net.dll",
+        "Lucene.Net.Analysis.Common.dll",
+        "",
+        ""
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

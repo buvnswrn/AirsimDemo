@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>dotNetRdf</id>
+    <version>3.1.0</version>
+    <title>dotNetRDF Meta-package</title>
+    <authors>RobVesse,tpluscode,kal_ahmed,ronmichael,dotnetrdf</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>http://www.dotnetrdf.org/</projectUrl>
+    <description>This package installs all of the dotNetRDF packages.</description>
+    <copyright>Copyright © dotNetRDF Project 2009-2023</copyright>
+    <tags>RDF Semantic Web Linked Data SPARQL RDF/XML Turtle Notation3 JSON-LD RDFStar</tags>
+    <repository type="git" url="https://github.com/dotnetrdf/dotnetrdf" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="dotNetRdf.Client" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Core" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Data.DataTables" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Dynamic" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Inferencing" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Ontology" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Query.FullText" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Query.Spin" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Shacl" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Skos" version="3.1.0" exclude="Build,Analyzers" />
+        <dependency id="dotNetRdf.Writing.HtmlSchema" version="3.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

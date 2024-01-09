@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Lucene.Net.Queries</id>
+    <version>4.8.0-beta00016</version>
+    <authors>The Apache Software Foundation</authors>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>lucene-net-icon-128x128.png</icon>
+    <projectUrl>https://lucenenet.apache.org/</projectUrl>
+    <description>Extended Filters and Queries for the Lucene.NET full-text search engine library from The Apache Software Foundation.
+
+Documentation: https://lucenenet.apache.org/docs/4.8.0-beta00016/api/queries/Lucene.Net.Queries.html
+
+This package is part of the Lucene.NET project: https://www.nuget.org/packages/Lucene.Net/4.8.0-beta00016</description>
+    <releaseNotes>https://github.com/apache/lucenenet/releases/tag/Lucene.Net_4_8_0_beta00016</releaseNotes>
+    <copyright>Copyright © 2006 - 2022 The Apache Software Foundation</copyright>
+    <tags>lucene.net core text search information retrieval lucene apache analysis index query queries</tags>
+    <repository type="git" url="https://github.com/apache/lucenenet" commit="bed207a81acb7d100a5545dc28eeeb66d35e06ba" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="Lucene.Net" version="4.8.0-beta00016" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="Lucene.Net" version="4.8.0-beta00016" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Lucene.Net" version="4.8.0-beta00016" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Lucene.Net" version="4.8.0-beta00016" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

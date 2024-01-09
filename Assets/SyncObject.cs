@@ -26,7 +26,9 @@ public class SyncObject : MonoBehaviour
     {
         if (transform.position != _lastPosition)
         {
-            _rdf.UpdateRdfRepresentation(gameObject, type);
+            Debug.Log("Updating drone position in knowledge base");
+            _rdf.UpdateRdfRepresentation(gameObject, "QuadCopter");
+            _lastPosition = transform.position;
         }
     }
 }

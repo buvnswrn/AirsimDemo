@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -68,7 +69,8 @@ public class Rdf
         // INode _contains = graph.CreateUriNode(new Uri("http://www.dfki.de/unity-ns#contains"));
         INode contains = _g.CreateUriNode(new Uri(RdfSpecsHelper.RdfObject));
         Uri stringNode = new Uri(XmlSpecsHelper.XmlSchemaDataTypeString);
-        INode s = _g.CreateBlankNode();
+        // INode s = _g.CreateBlankNode();
+        INode s = _g.CreateUriNode(new Uri("https://www.dfki.de/unity-ns#GameObject" + obj.GetInstanceID()));
 
         INode rdftype = _g.CreateUriNode(new Uri(RdfSpecsHelper.RdfType));
         INode typeNode = _g.CreateLiteralNode(type, stringNode);
@@ -76,6 +78,10 @@ public class Rdf
         
         INode label = _g.CreateUriNode(new Uri(OntologyHelper.PropertyLabel));
         INode name = _g.CreateLiteralNode(obj.name,stringNode);
+        if (obj.name == "QuadCopter")
+        {
+            Debug.Log("Sending a QuadCopter");
+        }
         
         INode positionNode = _g.CreateUriNode(new Uri("https://www.dfki.de/unity-ns#position"));
         INode position = _g.CreateLiteralNode(obj.transform.position.ToString(), stringNode);
@@ -89,7 +95,11 @@ public class Rdf
         _g.Assert(new Triple(_rootNode, contains, s));
         _g.Assert(new Triple(s, rdftype, typeNode));
         _g.Assert(new Triple(s, label, name));
-        _g.Assert(new Triple(s, positionNode, position));
+        Triple positionTriple = new Triple(s, positionNode, position);
+        // Triple newTriple = _g.GetTripleNode(positionTriple).Triple;
+        // _g.Retract(newTriple);        
+        
+        _g.Assert(positionTriple);
         _g.Assert(new Triple(s, rotationNode, rotation));
         _g.Assert(new Triple(s, forwardNode, forward));
     }
@@ -100,8 +110,8 @@ public class SyncObjects : MonoBehaviour
     [FormerlySerializedAs("Repository")] public string repository = "http://localhost:8090/rdf4j/repositories/dummy_knowledge";
     [FormerlySerializedAs("rdf_server")] public string rdfServer = "http://localhost:7200";
     [FormerlySerializedAs("repo_name")] public string repoName = "dummy_knowledge";
-    [FormerlySerializedAs("graph_name_uri")] public string graphNameUri = "https://www.openrdf.org/schema/sesame#nil";
-    [FormerlySerializedAs("_objectsOfInterest")] public List<string> objectsOfInterest = new List<string>{ "Box", "Shelf", "Rack", "Worker", "Drone"};
+    [FormerlySerializedAs("graph_name_uri")] public string graphNameUri = "https://www.dfki.de/unity-ns#GameObjects";
+    [FormerlySerializedAs("_objectsOfInterest")] public List<string> objectsOfInterest = new List<string>{ "Box", "Shelf", "Rack", "Worker", "QuadCopter"};
 
     private Rdf Rdf { get; } = Rdf.Instance();
 

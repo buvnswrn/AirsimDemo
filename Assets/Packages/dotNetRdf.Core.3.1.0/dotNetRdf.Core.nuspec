@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>dotNetRdf.Core</id>
+    <version>3.1.0</version>
+    <title>dotNetRDF Core Library</title>
+    <authors>RobVesse,tpluscode,kal_ahmed,ronmichael,dotnetrdf</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>http://www.dotnetrdf.org/</projectUrl>
+    <description>dotNetRDF is an RDF, SPARQL and Linked Datat API for .Net.  It provides simple but powerfully extensible APIs for this and integrates with a variety of popular triple stores.</description>
+    <copyright>Copyright © dotNetRDF Project 2009-2023</copyright>
+    <tags>RDF Semantic Web Linked Data SPARQL RDF/XML Turtle Notation3 JSON-LD RDFStar</tags>
+    <repository type="git" url="https://github.com/dotnetrdf/dotnetrdf" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AngleSharp" version="1.0.4" exclude="Build,Analyzers" />
+        <dependency id="HtmlAgilityPack" version="1.11.53" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" exclude="Build,Analyzers" />
+        <dependency id="System.Collections.Specialized" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.ComponentModel.TypeConverter" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Configuration.ConfigurationManager" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Globalization.Extensions" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http" version="4.3.4" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Thread" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="VDS.Common" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
