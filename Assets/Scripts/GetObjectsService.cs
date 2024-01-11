@@ -51,21 +51,31 @@ public class GetObjectsService : MonoBehaviour
 
     private void getObjects(string name, HttpListenerContext context)
     {
+        string body = new StreamReader(context.Request.InputStream).ReadToEnd();
+        JObject name_json = JObject.Parse(body);
+        name = name_json["objectOfInterest"].ToString();
         Debug.Log("Getting the objects of Interest:"+name);
         var allGameObjects = Resources.FindObjectsOfTypeAll<GameObject>();
         foreach (var gameObject in allGameObjects)
-        {
-            if (gameObject.name == objectOfInterest)
+        { 
+            if (gameObject.name == name)
             {
                 string objectName;
-                if (objectOfInterest.Contains("box"))
+                if (name.Contains("box"))
                 {
                     objectName = "box_" + gameObject.GetInstanceID();
-                    GameObjectOfInterest gameObjectOfInterest = new GameObjectOfInterest();
-                    gameObjectOfInterest.name = objectName;
-                    gameObjectOfInterest.position = gameObject.transform.position;
-                    listOfGameObjectOfInterest.Add(gameObjectOfInterest);
+                } else if (name.Contains("Rack"))
+                {
+                    objectName = "shelf_" + gameObject.GetInstanceID();
                 }
+                else
+                {
+                    objectName = name + "_" + gameObject.GetInstanceID();
+                }
+                GameObjectOfInterest gameObjectOfInterest = new GameObjectOfInterest();
+                gameObjectOfInterest.name = objectName;
+                gameObjectOfInterest.position = gameObject.transform.position;
+                listOfGameObjectOfInterest.Add(gameObjectOfInterest);
             }
         }
         serviceRegistry.SendResult(context, JsonConvert.SerializeObject(listOfGameObjectOfInterest, Formatting.Indented, new JsonSerializerSettings()
