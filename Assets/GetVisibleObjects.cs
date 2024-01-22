@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json;
+using RoboticWarehouse;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GetVisibleObjects : MonoBehaviour
 {
@@ -43,6 +45,7 @@ public class GetVisibleObjects : MonoBehaviour
             RaycastHit[] hits;
 
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Shelf");
+            List<ObjectInfo> objectInfos = new List<ObjectInfo>();
             foreach (GameObject shelf in gameObjects)
             {
                 if(shelf.name.Contains("Shelving"))
@@ -55,9 +58,25 @@ public class GetVisibleObjects : MonoBehaviour
                         Debug.LogWarning("Shelf in sight" + shelf.GetInstanceID() + ":" + angleToShelf);
                         GameObject rack = shelf.gameObject.transform.Find("Rack").gameObject;
                         // rack.GetComponent<Renderer>().material.color = Color.white;
-                        if (WhetherRackIsVisible(rack, droneObject))
+                        NavMeshHit navMeshHit;
+                        // Check whether the position is on the navmesh else try to correct it to nearest navmesh point
+                        if (NavMesh.SamplePosition(shelf.transform.position, out navMeshHit, 2, NavMesh.AllAreas))
                         {
-                            Debug.LogWarning("Shelf visible in camera" + shelf.GetInstanceID());
+                            Debug.LogWarning("Nearest Navmesh point to" + shelf.transform.position + " is " +
+                                             navMeshHit.position + ":" + navMeshHit.distance);
+                            ObjectInfo tempObjectInfo = new ObjectInfo
+                            {
+                                Name = shelf.name,
+                                Position = navMeshHit.position,
+                                InstanceId = shelf.GetInstanceID(),
+                                IsVisible = false
+                            };
+                            if (WhetherRackIsVisible(rack, droneObject))
+                            {
+                                tempObjectInfo.IsVisible = true;
+                                Debug.LogWarning("Shelf visible in camera" + shelf.GetInstanceID());
+                            }
+                            objectInfos.Add(tempObjectInfo);
                         }
                     }
                 }
@@ -74,9 +93,15 @@ public class GetVisibleObjects : MonoBehaviour
                 Debug.DrawRay(droneObject.transform.position, droneObject.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
                 Debug.Log("Missed");
             }
-            
+
+            ObjectInfo objectInfo = new ObjectInfo
+            {
+                Name = hit.collider.gameObject.name,
+                Position = hit.collider.gameObject.transform.position,
+                InstanceId = hit.collider.gameObject.GetInstanceID()
+            };
             // Send the results back
-            _serviceRegistry.SendResult(context, JsonConvert.SerializeObject(hit.collider.gameObject.transform.position, Formatting.Indented, new JsonSerializerSettings()
+            _serviceRegistry.SendResult(context, JsonConvert.SerializeObject(objectInfos, Formatting.Indented, new JsonSerializerSettings()
             {
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore
             }));
